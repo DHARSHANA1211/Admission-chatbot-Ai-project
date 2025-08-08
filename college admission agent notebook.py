@@ -1,0 +1,76 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[5]:
+
+
+print("Ask me about courses, fees, scholarship, timeline, placement, etc.")
+print("Type 'exit' to end.\n")
+
+while True:
+    ask = input("👩‍🎓 You: ").lower()
+    if ask == "exit":
+        print("👋 Thank you! Good luck with your admission journey.")
+        break
+    elif ask in admission_info:
+        print("🤖 DMI Chatbot:", admission_info[ask])
+    else:
+        print("🤖 DMI Chatbot: Sorry, I don't understand. Try keywords like 'courses', 'fees', or 'contact'.")
+
+# Run chatbot
+dmi_admission_chatbot()
+
+
+# In[ ]:
+
+
+# dmi_admission_chatbot_partial.py
+
+# Responses dictionary (same as before)
+admission_info = {
+    "courses": "We offer: B.Tech AI & DS, B.Tech IT, B.E CSE, Mech, ECE, EEE, and Civil.",
+    "fees": "Tuition Fee: ₹50,000–₹85,000/year. Hostel Fee: ₹52,000/year. Bus facility available.",
+    "scholarship": "Yes! Scholarships and fee reductions are offered to merit students.",
+    "admission process": "Admission is through Anna University Counselling and Management Quota.",
+    "eligibility": "10+2 with Physics, Chemistry, Mathematics. Minimum 50% marks.",
+    "timeline": "Applications start: April 1, 2025. Counselling: May–June. Classes: August.",
+    "placement": "Top recruiters: Zoho, TCS, Infosys, Delta X, Capestart, and more.",
+    "facilities": "Smart classrooms, labs, library, separate hostels, skill development, industrial visits.",
+    "clubs": "Clubs include: Coding, Drone, English, Incubation Centre, and Startup Cell.",
+    "events": "We conduct DJ nights, symposiums, college day, hackathons, and project expos.",
+    "contact": "Website: www.dmiengg.edu.in | Email: admission@dmiengg.edu.in | Phone: 04652-XXXXXX",
+    "principal": "Our principal is Dr. Albert.",
+    "location": "DMI Engineering College is located on Kumarapuram Road, Aralvaimozhi, Kanyakumari."
+}
+
+# Chatbot logic with partial matching
+def dmi_admission_chatbot():
+    print("🎓 Welcome to DMI Engineering College Admission Chatbot!")
+    print("Ask your question in full or with keywords (e.g., 'What courses?', 'Tell me the fees')")
+    print("Type 'exit' to quit.\n")
+
+    while True:
+        user_input = input("👩‍🎓 You: ").lower()
+        if user_input == "exit":
+            print("👋 Thank you! Good luck with your admission journey.")
+            break
+
+        found = False
+        for key in admission_info:
+            if key in user_input:
+                print("🤖 DMI Chatbot:", admission_info[key])
+                found = True
+                break
+
+        if not found:
+            print("🤖 DMI Chatbot: I'm not sure about that. Try asking about 'courses', 'fees', 'placement', etc.")
+
+# Run chatbot
+dmi_admission_chatbot()
+
+
+# In[ ]:
+
+
+
+
